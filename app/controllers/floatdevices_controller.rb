@@ -14,7 +14,7 @@ class FloatdevicesController < ApplicationController
 
   def create
     @floatdevice = Floatdevice.new(floatdevice_params)
-    @floatdevice.user = User.find("1")
+    @floatdevice.user = current_user
     if @floatdevice.save
       redirect_to floatdevice_path(@floatdevice)
     else
