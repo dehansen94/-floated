@@ -15,7 +15,11 @@ class FloatdevicesController < ApplicationController
   def create
     @floatdevice = Floatdevice.new(floatdevice_params)
     @floatdevice.user = User.find("1")
-    @floatdevice.save
+    if @floatdevice.save
+      redirect_to floatdevice_path(@floatdevice)
+    else
+      render :new
+    end
   end
 
   private
