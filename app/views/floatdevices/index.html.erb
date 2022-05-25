@@ -1,6 +1,67 @@
-<%= @floatdevices.each do |floatdevice| %>
-  <%= floatdevice.name %>
-<% end %>
+<!--
+Want to display the cards in four different columns.
+Run less seeds: 4.times for seeds.
+-->
+<div class="container">
+  <div class="row justify-content-center">
+  <!--
+  <%= @floatdevices.each do |floatdevice| %>
+    <%= floatdevice.name %>
+  <% end %>
+  -->
+    <div class="col-3">
+      <div class="card-trip">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div>
+            <h2>Title here</h2>
+            <p>Short description here!</p>
+          </div>
+          <h2 class="card-trip-pricing">£99.99</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card-trip">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div>
+            <h2>Title here</h2>
+            <p>Short description here!</p>
+          </div>
+          <h2 class="card-trip-pricing">£99.99</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card-trip">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div>
+            <h2>Title here</h2>
+            <p>Short description here!</p>
+          </div>
+          <h2 class="card-trip-pricing">£99.99</h2>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <div class="card-trip">
+        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+        <div class="card-trip-infos">
+          <div>
+            <h2>Title here</h2>
+            <p>Short description here!</p>
+          </div>
+          <h2 class="card-trip-pricing">£99.99</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+
 
 <div class="container">
   <div class="card-trip">
@@ -24,3 +85,4 @@
     </div>
   </div>
 </div>
+-->
