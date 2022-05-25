@@ -1,0 +1,12 @@
+<div class="container">
+  <%= simple_form_for(@floatdevice) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :price %>
+    <%= f.input :category %>
+    <%= f.input :size %>
+    <%= f.input :description %>
+    <%= f.input :special_features %>
+    <%= f.input :photo, as: :file, direct_upload: true %>
+    <%= f.submit %>
+  <% end %>
+</div>
