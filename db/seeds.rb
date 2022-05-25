@@ -1,3 +1,4 @@
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -6,12 +7,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-# major_floats_owner = User.create(name: "Jon", email: "jonathan.mclachlan@hotmail.com", password: "123456")
-
 require "open-uri"
-
-major_floats_owner = User.find("1")
+User.destroy_all
+major_floats_owner = User.create(name: "Jon", email: "jonathan.mclachlan@hotmail.com", password: "123456")
+# major_floats_owner = User.find("1")
 
 Floatdevice.destroy_all
 
@@ -44,3 +43,4 @@ pizza_pic = URI.open('https://res.cloudinary.com/dg9murjje/image/upload/v1653403
 pizza.photo.attach(io: pizza_pic, filename: 'pizza.jpg', content_type: 'image/jpg')
 pizza.user = major_floats_owner
 pizza.save
+

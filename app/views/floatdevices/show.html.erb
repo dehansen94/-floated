@@ -1,8 +1,14 @@
-
-
-<div class="container mt-3">
-  <h1>This is our view page you swimming bugger</h1>
-
-  <h1><%= @floatdevice.name.upcase %></h1>
-
+<div class="card-trip mt-4 mb-4">
+  <h2><%= @floatdevice.name.upcase %></h2>
+  <%= cl_image_tag @floatdevice.photo.key, height: 300, width: 400, crop: :fill %>
+  <div class="card-trip-infos">
+    <div>
+      <p>Category: <%= @floatdevice.category %></p>
+      <p>Short description here: <%= @floatdevice.description %></p>
+    </div>
+    <div>
+      <h2 class="card-trip-pricing">$<%= @floatdevice.price %></h2>
+      <h3><%= @floatdevice.user.name %></h3>
+    </div>
+  </div>
 </div>

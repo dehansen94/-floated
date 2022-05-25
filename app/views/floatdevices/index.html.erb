@@ -1,3 +1,51 @@
-<%= @floatdevices.each do |floatdevice| %>
-  <%= floatdevice.name %>
-<% end %>
+
+<div class="container">
+  <h1>Choose your float!</h1>
+  <div class="row">
+
+    <% @floatdevices.each do |floatdevice| %>
+        <div class="col-3">
+          <div class="card-trip my-3">
+            <%= cl_image_tag floatdevice.photo.key, crop: :fill %>
+
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= floatdevice.name %></h2>
+                <p><%= floatdevice.description %></p>
+              </div>
+              <h2 class="card-trip-pricing"><%= floatdevice.price %> euro</h2>
+            </div>
+          </div>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>
+
+<!--
+
+
+<div class="container">
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2>Title here</h2>
+        <p>Short description here!</p>
+      </div>
+      <h2 class="card-trip-pricing">£99.99</h2>
+    </div>
+  </div>
+    <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2>Title here</h2>
+        <p>Short description here!</p>
+      </div>
+      <h2 class="card-trip-pricing">£99.99</h2>
+    </div>
+  </div>
+</div>
+-->
