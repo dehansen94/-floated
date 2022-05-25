@@ -5,17 +5,19 @@
 
     <% @floatdevices.each do |floatdevice| %>
         <div class="col-3">
-          <div class="card-trip my-3">
+        <%= link_to floatdevice_path(floatdevice) do %>
+          <div class="card-dina my-3">
             <%= cl_image_tag floatdevice.photo.key, crop: :fill %>
 
-            <div class="card-trip-infos">
+            <div class="card-dina-infos">
               <div>
                 <h2><%= floatdevice.name %></h2>
                 <p><%= floatdevice.description %></p>
               </div>
-              <h2 class="card-trip-pricing"><%= floatdevice.price %> euro</h2>
+              <h2 class="card-dina-pricing"><%= floatdevice.price %> euro</h2>
             </div>
           </div>
+      <% end %>
       </div>
     <% end %>
 
@@ -24,7 +26,7 @@
 </div>
 
 <!--
-
+<%= link_to "Improve Your Ruby Skills", "/ruby-book" %>
 
 <div class="container">
   <div class="card-trip">

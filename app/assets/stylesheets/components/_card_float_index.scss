@@ -1,4 +1,4 @@
-.card-trip {
+.card-dina {
   width: 100%;
   // height: 100%;
   overflow: hidden;
@@ -9,33 +9,34 @@
 
 }
 
-.card-trip>img {
+.card-dina>img {
   width: 100%;
   object-fit: cover;
 }
 
-.card-trip h2 {
+.card-dina h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-trip p {
+.card-dina p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
 }
 
 
-.card-trip .card-trip-infos {
+.card-dina .card-dina-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  text-decoration: none;
 }
 
-.card-trip-infos .card-trip-user {
+.card-dina-infos .card-dina-user {
   position: absolute;
   right: 16px;
   top: -20px;
