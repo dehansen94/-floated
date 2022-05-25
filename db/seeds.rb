@@ -7,12 +7,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-
-# major_floats_owner = User.create(name: "Jon", email: "jonathan.mclachlan@hotmail.com", password: "123456")
-
 require "open-uri"
-
-major_floats_owner = User.find("1")
+User.destroy_all
+major_floats_owner = User.create(name: "Jon", email: "jonathan.mclachlan@hotmail.com", password: "123456")
+# major_floats_owner = User.find("1")
 
 Floatdevice.destroy_all
 
