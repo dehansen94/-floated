@@ -1,0 +1,8 @@
+<div class="container mt-3" >
+  <%= simple_form_for([@floatdevice, @booking]) do |f| %>
+    <%= f.input :start_date, as: :date %>
+    <%= f.input :end_date, as: :date %>
+    <%= f.input :comment %>
+    <%= f.submit %>
+  <% end %>
+</div>
