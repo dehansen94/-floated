@@ -1,5 +1,5 @@
 .footer {
-  background: white;
+  background: rgba(224, 24, 177,0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -7,7 +7,7 @@
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
   position: sticky;
-
+  border-top: 1px solid $floaty-pink;
 }
 .footer-links {
   display: flex;
