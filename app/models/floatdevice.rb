@@ -7,4 +7,11 @@ class Floatdevice < ApplicationRecord
   validates :size, presence: true
   validates :description, presence: true
   has_one_attached :photo
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_description_and_category,
+    against: [ :name, :description, :category ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
