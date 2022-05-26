@@ -5,8 +5,6 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new
-    @floatdevice = Floatdevice.find(params[:floatdevice_id])
   end
 
   def create
@@ -14,17 +12,19 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @floatdevice = Floatdevice.find(params[:floatdevice_id])
     @booking.floatdevice = @floatdevice
+    @booking.status = "pending"
     if @booking.save
-      redirect_to floatdevice_path(@floatdevice)
+      redirect_to root_path
     else
-      render :new
+      render "floatdevices/show"
     end
+
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :status)
+    params.require(:booking).permit(:start_date, :end_date, :comment)
   end
 
 end

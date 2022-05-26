@@ -2,10 +2,15 @@ class FloatdevicesController < ApplicationController
   before_action :set_floatdevice, only: [:show]
 
   def index
-    @floatdevices = Floatdevice.all
+    if params[:query].present?
+       @floatdevices = Floatdevice.search_by_name_description_and_category(params[:query])
+    else
+       @floatdevices = Floatdevice.all
+    end
   end
 
   def show
+    @booking = Booking.new
   end
 
   def new
@@ -20,6 +25,12 @@ class FloatdevicesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @floatdevice = set_floatdevice
+    @floatdevice.delete
+    redirect_to root_path
   end
 
   private

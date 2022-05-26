@@ -1,20 +1,41 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://res.cloudinary.com/dg9murjje/image/upload/v1653554906/banner_image_s1vdkm.webp);">
+  <%# <img id="banner-logo" src="https://res.cloudinary.com/dg9murjje/image/upload/v1653387311/sqfa66cjv5suawauacq2.png" /> %>
+  <div class="container d-flex flex-column align-items-center">
+    <h1>Join the movement - stop swimming - start
+    <i class="highlited-pink">FLOATING!</i>
+    </h1>
+
+    <%= form_tag floatdevices_path, method: :get do %>
+      <div class="d-flex">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Find your float!"
+        %>
+        <%= submit_tag "Find floaties!", class: "btn btn-pink-sq" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 
 <div class="container">
-  <h1>Choose your float!</h1>
   <div class="row">
 
     <% @floatdevices.each do |floatdevice| %>
         <div class="col-3">
         <%= link_to floatdevice_path(floatdevice) do %>
           <div class="card-dina my-3">
-            <%= cl_image_tag floatdevice.photo.key, crop: :fill %>
+            <div class="f-lex justify-content-center card-img-div" style="text-align: center">
+              <%= cl_image_tag floatdevice.photo.key %>
+            </div>
 
             <div class="card-dina-infos">
               <div>
                 <h2><%= floatdevice.name %></h2>
                 <p><%= floatdevice.description %></p>
               </div>
-              <h2 class="card-dina-pricing"><%= floatdevice.price %> euro</h2>
+              <h2 class="card-dina-pricing"><i class="fas fa-euro-sign"></i><%= floatdevice.price %></h2>
             </div>
           </div>
       <% end %>
