@@ -2,7 +2,11 @@ class FloatdevicesController < ApplicationController
   before_action :set_floatdevice, only: [:show]
 
   def index
-    @floatdevices = Floatdevice.all
+    if params[:query].present?
+       @floatdevices = Floatdevice.search_by_name_description_and_category(params[:query])
+    else
+       @floatdevices = Floatdevice.all
+    end
   end
 
   def show
