@@ -10,6 +10,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @floatdevice = Floatdevice.find(params[:floatdevice_id])
     @booking.floatdevice = @floatdevice
+    @booking.status = "pending"
     if @booking.save
       redirect_to floatdevice_path(@floatdevice)
     else
