@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'floatdevices#index'
+  get '/profile', to: 'pages#profile'
 
   resources :floatdevices, only: [:show, :new, :create, :index] do
     resources :bookings, only: [:new, :create]
