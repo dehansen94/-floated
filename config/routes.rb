@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'floatdevices#index'
 
-  resources :floatdevices, only: [:show, :new, :create, :index] do
+  resources :floatdevices, only: [:show, :new, :create, :index, :destroy] do
     resources :bookings, only: [:new, :create]
   end
 
