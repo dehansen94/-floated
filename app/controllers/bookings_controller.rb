@@ -5,6 +5,11 @@ class BookingsController < ApplicationController
     @floatdevice = Floatdevice.find(params[:floatdevice_id])
   end
 
+  def index
+    @bookings = current_user.bookings
+  end
+
+
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
