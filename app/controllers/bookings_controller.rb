@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.floatdevice = @floatdevice
     @booking.status = "pending"
     if @booking.save
-      redirect_to root_path
+      redirect_to bookings_path
     else
       render "floatdevices/show"
     end
