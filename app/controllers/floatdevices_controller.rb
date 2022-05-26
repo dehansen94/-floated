@@ -27,6 +27,12 @@ class FloatdevicesController < ApplicationController
     end
   end
 
+  def destroy
+    @floatdevice = set_floatdevice
+    @floatdevice.delete
+    redirect_to root_path
+  end
+
   private
 
   def set_floatdevice
