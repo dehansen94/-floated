@@ -1,0 +1,18 @@
+
+<h1>Booked floats</h1>
+<div class="container">
+  <div class="row">
+
+    <% @bookings.each do |booking| %>
+     <div class="col-2">
+        <h3> <%= booking.user.name%> </h3>
+        <h3> <%= booking.start_date%> </h3>
+        <h3> <%= booking.end_date%> </h3>
+
+      </div>
+
+    <% end %>
+
+  </div>
+
+</div>
