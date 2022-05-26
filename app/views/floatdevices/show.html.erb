@@ -1,15 +1,26 @@
-<div class="card-trip mt-4 mb-4">
-  <h2><%= @floatdevice.name.upcase %></h2>
-  <%= cl_image_tag @floatdevice.photo.key, crop: :fill %>
-  <div class="card-trip-infos">
-    <div>
-      <p>Category: <%= @floatdevice.category %></p>
-      <p>Short description here: <%= @floatdevice.description %></p>
+<div class="container bg-white">
+  <div class="card-trip mt-4 mb-4 d flex">
+    <h2><%= @floatdevice.name.upcase %></h2>
+    <%= cl_image_tag @floatdevice.photo.key, crop: :fill %>
+    <div class="card-trip-infos">
+      <div>
+        <h5>Category: <%= @floatdevice.category %></h5>
+        <h5>Description: <%= @floatdevice.description %></h5>
+      </div>
+      <div>
+     <img class="avatar-bordered-show" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1649361676/zo4scrvnk9cmiwb7yhid.jpg" />
+        <h4><i class="fas fa-euro-sign"></i> <%= @floatdevice.price %></h4>
+        <h5>Capacity: <%= @floatdevice.size %></h5>
+      </div>
     </div>
-    <div>
-      <h2 class="card-trip-pricing">$<%= @floatdevice.price %></h2>
-      <h3><%= @floatdevice.name %></h3>
+
+    <div class="container-form mt-3" >
+      <%= simple_form_for([@floatdevice, @booking]) do |f| %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :comment %>
+        <%= f.submit "Float now", class: "btn btn-primary" %>
+      <% end %>
     </div>
-<%= link_to "Float now", new_floatdevice_booking_path(@floatdevice), class: "text-center btn btn-primary" %>
   </div>
 </div>
