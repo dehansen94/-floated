@@ -1,6 +1,7 @@
 
-<h1>Booked floats</h1>
+
 <div class="container">
+  <h1>Booked floats</h1>
   <div class="row">
 
     <% @bookings.each do |booking| %>
@@ -16,7 +17,7 @@
                 <h2><%= booking.floatdevice.name %></h2>
                 <p> The owner is <%= booking.floatdevice.user.name %></p>
                 <p><%= booking.start_date %> - <%= booking.end_date %></p>
-
+                <button type="button" class="btn btn-primary">Cancel</button>
               </div>
 
             </div>
@@ -29,8 +30,9 @@
 
 </div>
 
-<h1>Previous bookings</h1>
+
 <div class="container">
+  <h1>Previous bookings</h1>
   <div class="row">
 
     <% @bookings.each do |booking| %>
