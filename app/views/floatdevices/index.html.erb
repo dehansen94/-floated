@@ -23,7 +23,7 @@
   <div class="row">
 
     <% @floatdevices.each do |floatdevice| %>
-        <div class="col-3">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-s-12 align-items-stretch">
         <%= link_to floatdevice_path(floatdevice) do %>
           <div class="card-dina my-3">
             <div class="f-lex justify-content-center card-img-div" style="text-align: center">
@@ -32,10 +32,30 @@
 
             <div class="card-dina-infos">
               <div>
-                <h2><%= floatdevice.name %></h2>
-                <p><%= floatdevice.description %></p>
+                <h2>
+                  <span style="
+                      display:inline-block;
+                      white-space: nowrap;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      max-width: 20ch;"><%= floatdevice.name %>
+                  </span>
+                </h2>
+                <p> <span style="
+                      display:inline-block;
+                      white-space: nowrap;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      max-width: 20ch;">
+                  <%= floatdevice.description %>
+
+                </p>
+                <p><i class="fas fa-tag"></i> <%= floatdevice.category %></p>
               </div>
-              <h2 class="card-dina-pricing"><i class="fas fa-euro-sign"></i><%= floatdevice.price %></h2>
+              <div class="card-rhs-info-container">
+                <h2 class="card-dina-pricing"><i class="fas fa-euro-sign"></i> <%= floatdevice.price %></h2>
+                <h2 class="card-dina-seats"><i class="fas fa-chair"></i>  <%= floatdevice.size %></h2>
+              </div>
             </div>
           </div>
       <% end %>
@@ -45,30 +65,3 @@
   </div>
 
 </div>
-
-<!--
-<%= link_to "Improve Your Ruby Skills", "/ruby-book" %>
-
-<div class="container">
-  <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Title here</h2>
-        <p>Short description here!</p>
-      </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
-    </div>
-  </div>
-    <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-trip-infos">
-      <div>
-        <h2>Title here</h2>
-        <p>Short description here!</p>
-      </div>
-      <h2 class="card-trip-pricing">£99.99</h2>
-    </div>
-  </div>
-</div>
--->

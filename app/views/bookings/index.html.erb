@@ -1,16 +1,60 @@
 
-<h1>Booked floats</h1>
+
 <div class="container">
+  <h1>Booked floats</h1>
   <div class="row">
 
     <% @bookings.each do |booking| %>
-     <div class="col-2">
-        <h3> <%= booking.user.name%> </h3>
-        <h3> <%= booking.start_date%> </h3>
-        <h3> <%= booking.end_date%> </h3>
+      <% if booking.end_date >= Date.today %>
+        <div class="col-3">
+          <div class="card-dina my-3">
+            <div class="f-lex justify-content-center card-img-div" style="text-align: center">
+              <%= cl_image_tag booking.floatdevice.photo.key %>
+            </div>
 
+            <div class="card-dina-infos">
+              <div>
+                <h2><%= booking.floatdevice.name %></h2>
+                <p> The owner is <%= booking.floatdevice.user.name %></p>
+                <p><%= booking.start_date %> - <%= booking.end_date %></p>
+                <button type="button" class="btn btn-primary">Cancel</button>
+              </div>
+
+            </div>
+            </div>
       </div>
+      <% end %>
+    <% end %>
 
+  </div>
+
+</div>
+
+
+<div class="container">
+  <h1>Previous bookings</h1>
+  <div class="row">
+
+    <% @bookings.each do |booking| %>
+      <% if booking.end_date < Date.today %>
+        <div class="col-2">
+          <div class="card-dina my-3">
+            <div class="f-lex justify-content-center card-img-div" style="text-align: center">
+              <%= cl_image_tag booking.floatdevice.photo.key %>
+            </div>
+
+            <div class="card-dina-infos">
+              <div>
+                <h2><%= booking.floatdevice.name %></h2>
+                <p> The owner is <%= booking.floatdevice.user.name %></p>
+                <p><%= booking.start_date %> - <%= booking.end_date %></p>
+
+              </div>
+
+            </div>
+            </div>
+      </div>
+      <% end %>
     <% end %>
 
   </div>
