@@ -1,33 +1,55 @@
 <h2 class="text-center"><%= @user.name %></h2>
 <h2 class="text-center">Find all your booking requestes here !</h2>
-<div class="contanier">
-
-  <div class="container">
-    <div class="row">
-
-      <div class="col-3" id="profile">
-        <a href="#myfloaty" class="btn btn-primary">My Floaty</a>
-        <a href="my requestes" class="btn btn-primary">My Requestes</a>
+<div class="container">
+  <div class="row d-flex justify-content-center align-items-center">
+    <div class="col-3">
+      <div class="button-box">
+        <a href="#floaty" class="btn btn-primary">Floaty</a>
+        <a href="#request" class="btn btn-primary">Requests</a>
       </div>
-
-      <div class="col-9" id="my floaty">
-        <div class="cards">
-          <h2>My Floaty</h2>
-          <% @floatdevices.each do |floatdevice| %>
-            <div class="card-booking">
-              <%= cl_image_tag floatdevice.photo.key, crop: :fill %>
-            </div>
-          <% end %>
-        </div>
-
-        <div class="cards" id="my requestes">
-          <h2>My Requestes</h2>
-          <div>
-            <a href="" class="btn btn-primary">Float</a>
-            <a href="" class="btn btn-primary">Sorry</a>
+    </div>
+    <div class="col-9">
+      <div class="row">
+            <h3 id="floaty">Floaty</h3>
+        <% @floatdevices.each do |floatdevice| %>
+          <div class="col-3">
+            <%= link_to floatdevice_path(floatdevice) do %>
+              <div class="card-dina my-3">
+                <div class="f-lex justify-content-center card-img-div" style="text-align: center">
+                  <%= cl_image_tag floatdevice.photo.key %>
+                </div>
+                <div class="card-dina-infos">
+                  <div>
+                    <h2><%= floatdevice.name %></h2>
+                  </div>
+                  <h2 class="card-dina-pricing"><i class="fas fa-euro-sign"></i><%= floatdevice.price %></h2>
+                </div>
+              </div>
+            <% end %>
           </div>
-        </div>
+        <% end %>
       </div>
+      <div class="row">
+      <h3 id="request">Requests</h3>
+        <% @booking_requests.each do |booking_request| %>
+          <div class="col-3">
+      <%# <%= link_to floatdevice_path(floatdevice) do %>
+            <div class="card-dina my-3">
+              <div class="f-lex justify-content-center card-img-div" style="text-align: center">
+                <%= cl_image_tag booking_request.floatdevice.photo.key %>
+              </div>
+              <div class="card-dina-infos">
+                <div>
+                  <p>From: <%= booking_request.start_date %></p>
+                  <p>Until: <%= booking_request.end_date %></p>
+                </div>
+                <h2 class="card-dina-pricing"><%= booking_request.status %></h2>
 
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
+</div>
