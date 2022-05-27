@@ -6,7 +6,7 @@
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   // margin-top: 12px;
   // margin-bottom: 12px;
-  height: 20vw;
+  // height: 20vw;
 }
 
 .card-img-div>img {
@@ -22,13 +22,13 @@
 }
 
 .card-dina p {
-  font-size: 12px;
+  font-size: 16px;
   opacity: .7;
   margin: 0;
 }
 
 .card-img-div {
-  height: 75%;
+  height: 15vw;
 }
 
 .card-dina .card-dina-infos {
@@ -45,4 +45,10 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card-dina-pricing {
+  margin-top: 10px;
+  // padding-top: 10px;
+  padding-bottom: 5px;
 }
