@@ -17,6 +17,7 @@
                 <h2><%= booking.floatdevice.name %></h2>
                 <p> The owner is <%= booking.floatdevice.user.name %></p>
                 <p><%= booking.start_date %> - <%= booking.end_date %></p>
+                <p> Request is <%= booking.status %></p>
                 <%# <button type="button" class="btn btn-primary">Cancel</button> %>
                 <%= link_to "Cancel", booking_path(booking), method: :delete, class:"btn btn-primary" %>
               </div>
