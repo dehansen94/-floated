@@ -2,7 +2,7 @@
   <div class="card-trip mt-4 mb-4 d flex">
     <h2><%= @floatdevice.name.upcase %></h2>
       <% if @floatdevice.user == current_user %>
-        <%= link_to "#{@floatdevice.name} is mine and I don't want to share anymore" , floatdevice_path(@floatdevice), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
+        <%= link_to "#{@floatdevice.name} is mine and I don't want to share anymore" , floatdevice_path(@floatdevice), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary-large" %>
       <% end %>
     <%= cl_image_tag @floatdevice.photo.key, crop: :fill %>
     <div class="card-trip-infos">

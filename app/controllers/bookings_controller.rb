@@ -24,7 +24,20 @@ class BookingsController < ApplicationController
     else
       render "floatdevices/show"
     end
+  end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = "accepted"
+    @booking.save
+    redirect_to profile_path
+  end
+
+  def decline
+    @booking = Booking.find(params[:id])
+    @booking.status = "declined"
+    @booking.save
+    redirect_to profile_path
   end
 
   private
