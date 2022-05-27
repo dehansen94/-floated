@@ -54,3 +54,15 @@
   // padding-top: 10px;
   padding-bottom: 5px;
 }
+
+#accepted {
+  color: rgba(81,240,0, 1);
+  background-color: rgba(81,240,0, 0.2);
+  font-weight: bold;
+}
+
+#declined {
+  color: rgba(255, 15, 15, 1);
+  background-color: rgba(255, 15, 15, 0.2);
+  font-weight: bold;
+}
