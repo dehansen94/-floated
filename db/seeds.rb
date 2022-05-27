@@ -9,7 +9,10 @@
 
 require "open-uri"
 User.destroy_all
-major_floats_owner = User.create(name: "Jon", email: "jonathan.mclachlan@hotmail.com", password: "123456")
+major_floats_owner = User.create(name: "Jon", email: "jonathan.mclachlan@hotmail.com", password: "123456",)
+major_floats_pic = URI.open('https://res.cloudinary.com/dg9murjje/image/upload/v1653647423/image_v2r4go.png')
+major_floats_owner.avatar.attach(io: major_floats_pic, filename: 'Jon.jpg', content_type: 'image/jpg')
+
 # major_floats_owner = User.find("1")
 
 Floatdevice.destroy_all
@@ -43,4 +46,3 @@ pizza_pic = URI.open('https://res.cloudinary.com/dg9murjje/image/upload/v1653403
 pizza.photo.attach(io: pizza_pic, filename: 'pizza.jpg', content_type: 'image/jpg')
 pizza.user = major_floats_owner
 pizza.save
-

@@ -12,7 +12,11 @@
         <h6>Special Features: <%= @floatdevice.special_features %></h6>
       </div>
       <div>
-        <img class="avatar-bordered-show" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1649361676/zo4scrvnk9cmiwb7yhid.jpg" />
+      <% if @floatdevice.user.avatar.attached? %>
+        <%= cl_image_tag @floatdevice.user.avatar.key, class: "avatar-bordered-show" %>
+      <% else %>
+        <img class="avatar-bordered-show" src="https://res.cloudinary.com/dg9murjje/image/upload/v1653389397/empty-icon_fn2w2l.png">
+      <% end %>
         <h4><i class="fas fa-euro-sign"></i> <%= @floatdevice.price %></h4>
         <h5>Capacity: <%= @floatdevice.size %></h5>
       </div>
